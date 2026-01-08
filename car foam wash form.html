@@ -243,8 +243,31 @@
    
 
     <p>Give your car a premium foam wash 🚗✨</p>
+<form id="bookingForm">
+  <div class="input-group">
+    <input type="text" name="name" required>
+    <label>Full Name</label>
+  </div>
 
-    <form id="bookingForm">
+  <div class="input-group">
+    <input type="tel" name="phone" required>
+    <label>Mobile Number</label>
+  </div>
+
+  <div class="input-group">
+    <input type="text" name="car" required>
+    <label>Car Model</label>
+  </div>
+
+  <div class="input-group">
+    <input type="date" name="date" required>
+    <label>Preferred Date</label>
+  </div>
+
+  <button type="submit" class="book-btn">Book Now</button>
+</form>
+
+    <!-- <form id="bookingForm">
       <div class="input-group">
         <input type="text" required>
         <label>Full Name</label>
@@ -275,18 +298,36 @@
         <label>Time Slot</label>
       </div> -->
 
-      <button type="submit" class="book-btn">Book Now</button>
-    </form>
+      <!-- <button type="submit" class="book-btn">Book Now</button> -->
+    </form> 
   </div>
 </section>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
+  (function(){
+    emailjs.init("gDD1oWtMhyfqIXB4K"); // 🔑 replace this
+  })();
+
   document.getElementById("bookingForm").addEventListener("submit", function(e) {
     e.preventDefault();
-    alert("✅ Foam Wash booked successfully! We will contact you soon.");
-    this.reset();
+
+    emailjs.sendForm(
+      "service_2do5bv9",   // 🔁 replace
+      
+"template_e4oy35p",  // 🔁 replace
+      this
+    )
+    .then(function() {
+      alert("✅ Foam Wash booked successfully! We will contact you soon.");
+      document.getElementById("bookingForm").reset();
+    }, function(error) {
+      alert("❌ Failed to send booking. Please try again.");
+      console.log(error);
+    });
   });
 </script>
+
 
 </body>
 </html>
