@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Foam Wash | Big Brotiv</title>
+
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    
+    body {
+      background: radial-gradient(circle at top, #111, #000);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #000;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+  .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;   /* removes underline */
+  cursor: pointer;
+}
+
+.logo span {
+  color: #fc8403;
+}
+
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.navbar a:hover {
+  color: #fc8403; /* Change text color on hover */
+}
+
+/* Optional: underline animation */
+.navbar a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #fc8403;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+
+    /* ===== BOOKING SECTION ===== */
+    .booking-section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 20px 40px;
+    }
+
+    .booking-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 0 40px rgba(252, 132, 3, 0.3);
+      animation: slideUp 1s ease;
+    }
+
+    .booking-card h2 {
+      text-align: center;
+      color: #fc8403;
+      margin-bottom: 6px;
+    }
+
+    /* ===== PRICE TAG ===== */
+    .price-tag {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #fc8403;
+      margin-bottom: 10px;
+      text-shadow: 0 0 12px rgba(252, 132, 3, 0.7);
+      animation: priceGlow 2s infinite;
+    }
+
+    .price-tag span {
+      font-size: 1rem;
+      color: #ccc;
+      margin-left: 6px;
+    }
+
+    .booking-card p {
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    /* ===== FORM ===== */
+    .input-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      padding: 12px 10px;
+      background:#221f1f;
+      border: none;
+      border-bottom: 2px solid #555;
+      outline: none;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .input-group label {
+      position: absolute;
+      left: 10px;
+      top: 12px;
+      color: #aaa;
+      font-size: 14px;
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+
+    /* Floating Label */
+    .input-group input:focus + label,
+    .input-group input:valid + label,
+    .input-group select:focus + label,
+    .input-group select:valid + label {
+      top: -10px;
+      font-size: 12px;
+      color: #fc8403;
+    }
+
+    /* ===== BUTTON ===== */
+    .book-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #fc8403, gold);
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.4s;
+    }
+
+    .book-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px gold;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes priceGlow {
+      0% { text-shadow: 0 0 10px #fc8403; }
+      50% { text-shadow: 0 0 25px gold; }
+      100% { text-shadow: 0 0 10px #fc8403; }
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 480px) {
+      .booking-card {
+        padding: 30px 20px;
+      }
+
+      .navbar {
+        padding: 15px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar">
+  <a href="index .html" class="logo">
+    Big <span>Brotiv</span>
+  </a>
+
+
+  <nav>
+    <a href="index .html">Home</a>
+  </nav>
+</header>
+
+<!-- ===== BOOKING FORM ===== -->
+<section class="booking-section">
+  <div class="booking-card">
+    <h2>Book Foam Wash</h2>
+
+   
+
+    <p>Give your car a premium foam wash 🚗✨</p>
+
+    <form id="bookingForm">
+      <div class="input-group">
+        <input type="text" required>
+        <label>Full Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="tel" required>
+        <label>Mobile Number</label>
+      </div>
+
+      <div class="input-group">
+        <input type="text" required>
+        <label>Car Model</label>
+      </div>
+
+      <div class="input-group">
+        <input type="date" required>
+        <label>Preferred Date</label>
+      </div>
+<!-- 
+      <div class="input-group">
+        <select required>
+          <option value="" disabled selected></option>
+          <option>Morning</option>
+          <option>Afternoon</option>
+          <option>Evening</option>
+        </select>
+        <label>Time Slot</label>
+      </div> -->
+
+      <button type="submit" class="book-btn">Book Now</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("✅ Foam Wash booked successfully! We will contact you soon.");
+    this.reset();
+  });
+</script>
+
+</body>
+</html>

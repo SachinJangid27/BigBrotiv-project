@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book PPF | Big Brotiv</title>
+
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #111, #000);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #000;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+   .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;   /* removes underline */
+}
+
+.logo span {
+  color: #fc8403;
+}
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.navbar a:hover {
+  color: #fc8403; /* Change text color on hover */
+}
+
+/* Optional: underline animation */
+.navbar a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #fc8403;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+
+    /* ===== BOOKING SECTION ===== */
+    .booking-section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 110px 20px 40px;
+    }
+
+    .booking-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 460px;
+      box-shadow: 0 0 45px rgba(252, 132, 3, 0.35);
+      animation: slideUp 1s ease;
+    }
+
+    .booking-card h2 {
+      text-align: center;
+      color: #fc8403;
+      margin-bottom: 6px;
+    }
+
+    /* ===== PRICE ===== */
+    .price-tag {
+      text-align: center;
+      font-size: 2.1rem;
+      font-weight: bold;
+      color: #fc8403;
+      margin-bottom: 10px;
+      text-shadow: 0 0 12px rgba(252, 132, 3, 0.7);
+      animation: glow 2s infinite;
+    }
+
+    .price-tag span {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-left: 6px;
+    }
+
+    .booking-card p {
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    /* ===== FORM ===== */
+    .input-group {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      padding: 12px 10px;
+      background: #221f1f;
+      border: none;
+      border-bottom: 2px solid #555;
+      outline: none;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .input-group label {
+      position: absolute;
+      left: 10px;
+      top: 12px;
+      color: #aaa;
+      font-size: 14px;
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+
+    .input-group input:focus + label,
+    .input-group input:valid + label,
+    .input-group select:focus + label,
+    .input-group select:valid + label {
+      top: -10px;
+      font-size: 12px;
+      color: #fc8403;
+    }
+
+    /* ===== BUTTON ===== */
+    .book-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #fc8403, gold);
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.4s;
+    }
+
+    .book-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px gold;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(60px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #fc8403; }
+      50% { text-shadow: 0 0 25px gold; }
+      100% { text-shadow: 0 0 10px #fc8403; }
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 480px) {
+      .booking-card {
+        padding: 30px 20px;
+      }
+
+      .navbar {
+        padding: 15px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<!-- <header class="navbar">
+  <div class="logo">Big <span>Brotiv</span></div>
+  <nav> -->
+
+<header class="navbar">
+  <a href="index .html" class="logo">
+    Big <span>Brotiv</span>
+  </a>
+
+    <a href="index .html">Home</a>
+  </nav>
+</header>
+
+<!-- ===== BOOKING FORM ===== -->
+<section class="booking-section">
+  <div class="booking-card">
+    <h2>Book PPF (Paint Protection Film)</h2>
+
+
+    <p>Protect your car’s paint from scratches & stains 🚗✨</p>
+
+    <form id="ppfForm">
+      <div class="input-group">
+        <input type="text" id="fullname" name="fullname" required>
+        <label for="fullname">Full Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+        <label for="mobile">Mobile Number</label>
+      </div>
+
+      <div class="input-group">
+        <input type="text" id="carmodel" name="carmodel" required>
+        <label for="carmodel">Car Model</label>
+      </div>
+
+      <div class="input-group">
+        <select id="cartype" name="cartype" required>
+          <option value="" disabled selected></option>
+          <option>Hatchback</option>
+          <option>Sedan</option>
+          <option>SUV</option>
+          <option>Luxury</option>
+        </select>
+        <label for="cartype">Car Type</label>
+      </div>
+
+      <div class="input-group">
+        <select id="package" name="package" required>
+          <option value="" disabled selected></option>
+          <option>Full Car PPF</option>
+          <option>Partial Car PPF</option>
+          <option>Door & Bumper PPF</option>
+        </select>
+        <label for="package">PPF Package</label>
+      </div>
+
+      <div class="input-group">
+        <input type="date" id="preferredDate" name="preferredDate" required>
+        <label for="preferredDate">Preferred Date</label>
+      </div>
+
+      <button type="submit" class="book-btn">Book PPF</button>
+      <p id="confirmation" style="text-align:center;color:#0f0;margin-top:10px;display:none;">
+        ✅ PPF booking received! Our team will contact you shortly.
+      </p>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("ppfForm");
+  const confirmation = document.getElementById("confirmation");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    confirmation.style.display = "block";
+    form.reset();
+  });
+</script>
+
+</body>
+</html>

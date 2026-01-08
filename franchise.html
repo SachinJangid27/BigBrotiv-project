@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Franchise | BigBrotiv</title>
+
+  <style>
+
+
+.brand-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.brand-title .big {
+  color: #ffffff;       /* White for BIG */
+}
+
+.brand-title .brotiv {
+  color: #fc8403;       /* Orange for BROTIV */
+}
+
+
+
+    /* ===== Base ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: white;
+    }
+
+    /* ===== Navbar ===== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(0,0,0,0.6);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;   /* removes underline */
+}
+
+.logo span {
+  color: #fc8403;
+}
+
+    .navbar nav a {
+      color: #fff;
+      margin-left: 25px;
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .navbar nav a:hover,
+    .navbar nav a.active {
+      color: #fc8403;
+      transform: scale(1.1);
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      position: relative;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.45);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      color: #fc8403;
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    /* ===== Features ===== */
+    .features {
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 2.5rem;
+      color: #fc8403;
+      margin-bottom: 50px;
+    }
+
+    .feature-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: rgba(252, 132, 3, 0.12);
+      padding: 30px;
+      border-radius: 15px;
+      width: 280px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: transform 0.4s, box-shadow 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(252, 132, 3, 0.25);
+      transform: skewX(-25deg);
+      transition: left 0.6s ease;
+    }
+
+    .feature-card:hover::after {
+      left: 100%;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 30px #fc8403;
+    }
+
+    .feature-card img {
+      width: 60px;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 10px #fc8403);
+    }
+
+    /* ===== Button ===== */
+    .btn {
+      display: inline-block;
+      padding: 12px 35px;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #fc8403, gold);
+      color: #000;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      margin-top: 40px;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px gold;
+    }
+
+    /* ===== Animation ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: #111;
+      text-align: center;
+      padding: 40px 20px;
+      color: #aaa;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== Navbar ===== -->
+<header class="navbar">
+  <a href="index .html" class="logo">
+    Big <span>Brotiv</span>
+  </a>
+</div>
+  <nav>
+    <a href="index .html">Home</a>
+    <a href="car foam wash.html">Foam Wash</a>
+    <a href="ceramic-coating.html">Ceramic Coating</a>
+    <a href="ppf.html">PPF</a>
+    <a href="franchise.html" class="active">Franchise</a>
+    <a href="contact page.html">Contact</a>
+  </nav>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <img src="franchise image.jpg" alt="BigBrotiv Franchise" class="hero-img">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+ <h1 class="brand-title">
+  <span class="big">Big</span>
+  <span class="brotiv">Brotiv</span> Franchise
+</h1>
+
+    <p>Start your own premium car care business with us.</p>
+
+    <p>Big Brotiv is a leading automobile franchise in India for car detailing and paint protection services, catering to the needs of every car owner. The franchise fee is ZERO. It is a future-proof business that adapts to the changing market and customer needs. Our franchisees are not just our partners, they are our family. They share our vision of becoming the biggest car detailing company in India and beyond. They also strive to be the most profitable and number one car detailing studios in their respective regions. This is our complete mission and we are proud of it.</p>
+  </div>
+</section>
+
+<!-- ===== Features ===== -->
+<section class="features">
+  <h2>Why Partner With Us?</h2>
+
+  <div class="feature-cards">
+    <div class="feature-card">
+      <img src="brand-icon.png" alt="">
+      <h3>Strong Brand</h3><br>
+      <p>Recognized premium car care brand with growing demand.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="support-icon.png" alt="">
+      <h3>Complete Support</h3><br>
+      <p>Training, marketing, equipment & operational support.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="profit-icon.png" alt="">
+      <h3>High Profit Model</h3><br>
+      <p>Low investment with high-margin premium services.</p>
+    </div>
+  </div>
+
+   <a href="franchise form.html" class="btn">Apply for Franchise</a>
+
+
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <p>© 2025 BigBrotiv | All Rights Reserved</p>
+</footer>
+
+<script>
+  const cards = document.querySelectorAll(".feature-card");
+
+  function revealCards() {
+    const h = window.innerHeight;
+    cards.forEach(card => {
+      if (card.getBoundingClientRect().top < h - 100) {
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0)";
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealCards);
+  revealCards();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Big Brotiv | Premium Car Wash & Detailing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== Navbar ===== -->
+  <!-- <header class="navbar">
+ <div class="logo">
+  Big <span>Brotiv</span>
+</div>
+
+    <nav>
+      <nav>
+       <a href="">Home</a>
+      <a href="#services">Services</a>
+      <a href="franchise.html">Franchise</a>
+      <a href="contact page.html">Contact</a>
+    </nav>
+
+  </header> -->
+
+
+
+  <!-- new nav bar -->
+
+<header class="navbar">
+  <div class="logo">
+    Big <span>Brotiv</span>
+  </div>
+
+  <nav>
+    <a href="#" onclick="scrollToSection('services')">Home</a>
+
+    <!-- SERVICES WITH POPUP -->
+    <div class="service-wrapper">
+      <a href="#services" onclick="scrollToSection('services')">Services</a>
+
+      <!-- POPUP -->
+      <div class="service-popup">
+        <p>Premium Foam Wash</p>
+        <p>Ceramic Coating</p>
+        <p>PPF Protection</p>
+        <p>Interior Deep Clean</p>
+      </div>
+    </div>
+
+    <a href="franchise.html">Franchise</a>
+    <a href="contact page.html">Contact</a>
+  </nav>
+</header>
+
+
+
+
+  <!-- ===== Hero Section with Video Background ===== -->
+  <section id="home" class="hero">
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="bg video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="overlay"></div>
+
+    
+    <div class="hero-content">
+<div class="logo HEADER" style="font-size: 100px; font-weight: bold; letter-spacing: 2px;">
+  Big <span style="color: #fc8403; font-size: 100px;">Brotiv</span>
+</div>
+
+      <h1 class="glow-text">CAR DETAILING STUDIO</h1>
+      <p>Revive your car’s shine with <span class="highlight">BigBrotiv</span> — perfection meets passion.</p>
+      <a href="#services"><button class="btn" onclick="scrollToSection('services')">Explore More</button></a>
+
+  <!-- <a href="#services" onclick="scrollToSection('services')">Services</a> -->
+
+    </div>
+  </section>
+
+  <!-- ===== Services Section ===== -->
+ <!-- ===== Services Section ===== -->
+<section id="services" class="services">
+  <h2>Our Premium Services</h2>
+
+<div class="service-cards">
+    <!-- Clickable Card -->
+    <a href="car foam wash.html" class="card-link">
+      <div class="card">
+        <img src="Car Foam Wash IMG.jpg" alt="Foam Wash">
+        <h3> Premium Car Foam Wash</h3>
+        <p>Experience a spotless shine with our advanced foam cleaning system that removes every speck of dirt.</p>
+      </div>
+    </a>
+
+    
+     <a href="ceramic-coating.html" class="card-link">
+    <div class="card">
+      <img src="Ceramic Coating IMG.png" alt="Ceramic Coating">
+      <h3>Ceramic Coating</h3><br>
+      <p>Enhance your car’s gloss and protect it from UV rays, dust, and minor scratches with nano ceramic coating.</p>
+    </div>
+    </a>
+    
+    <a href="ppf page.html"class="card-link">
+    <div class="card">
+      <img src="PPF (Paint Protection Film) IMG.png" alt="PPF Protection">
+      <h3>PPF </h3>
+      <p>Invisible shield that keeps your car’s paint looking brand new by protecting it from chips and stains.</p>
+    </div>
+    </a>
+
+
+    <a href="interior deep clean.html" class="card-link">
+    <div class="card">
+      <img src="Interior Deep Clean IMG.jpg" alt="Interior Cleaning">
+      <h3>Interior Deep Clean</h3>
+      <p>Revive your cabin with full vacuuming, leather polishing, and interior sanitization.</p>
+    </div>
+  </div>
+</a>
+</section>
+
+
+ <!-- ===== Footer Image ===== -->
+<div class="footer-image-container">
+  <img src="Car Foam Wash IMG.jpg" alt="Car Detailing" />
+</div>
+
+  
+
+  <!-- ===== Footer Section (with Address & Contact) ===== -->
+  <footer id="contact" class="footer">
+    <div class="footer-content">
+      <h2>Contact Us</h2>
+      <p class="address"><strong>📍 Address:</strong> Near MRF Tyre, Opp. Anis Hall, Yavatmal Road, Wani 445304</p>
+      <p class="contact-item"><strong>📞 Phone:</strong> <a href="tel:8087880136">+91 8087880136</a></p>
+      <p class="contact-item"><strong>✉️ Email:</strong> <a href="mailto:bigbrotiv@gmail.com">bigbrotivofficial@gmail.com</a></p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 BigBrotiv | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+
+<!-- popup -->
+
+
+<!-- ===== Service Popup ===== -->
+<!-- <div class="service-modal" id="serviceModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <h2>Our Services</h2>
+    <p>
+      Premium Foam Wash<br>
+      Ceramic Coating<br>
+      PPF Protection<br>
+      Interior Deep Clean
+    </p>
+  </div>
+</div> -->
+
+
+
+
+
+
+</body>
+</html> 

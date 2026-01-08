@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior Deep Clean | BigBrotiv</title>
+
+  <style>
+    /* ===== Base ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: white;
+    }
+
+    /* ===== Navbar ===== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(0,0,0,0.6);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;   /* removes underline */
+}
+
+.logo span {
+  color: #fc8403;
+}
+
+    .navbar nav a {
+      color: #fff;
+      margin-left: 25px;
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .navbar nav a:hover,
+    .navbar nav a.active {
+      color: #fc8403;
+      transform: scale(1.1);
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      position: relative;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      color: #fc8403;
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    /* ===== Features ===== */
+    .features {
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 2.5rem;
+      color: #fc8403;
+      margin-bottom: 50px;
+    }
+
+    .feature-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: rgba(252, 132, 3, 0.12);
+      padding: 30px;
+      border-radius: 15px;
+      width: 280px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: transform 0.4s, box-shadow 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(252, 132, 3, 0.25);
+      transform: skewX(-25deg);
+      transition: left 0.6s ease;
+    }
+
+    .feature-card:hover::after {
+      left: 100%;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 30px #fc8403;
+    }
+
+    .feature-card img {
+      width: 60px;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 10px #fc8403);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover img {
+      transform: rotate(8deg) scale(1.1);
+    }
+    /* ===== Button ===== */
+    .btn {
+      display: inline-block;
+      padding: 12px 35px;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #fc8403, gold);
+      color: #000;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      margin-top: 40px;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: rgba(255,255,255,0.4);
+      transform: skewX(-25deg);
+      transition: left 0.6s ease;
+    }
+
+    .btn:hover::before {
+      left: 125%;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #fc8403;
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: #111;
+      text-align: center;
+      padding: 40px 20px;
+      color: #aaa;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== Navbar ===== -->
+<header class="navbar">
+  <a href="index .html" class="logo">
+    Big <span>Brotiv</span>
+  </a>
+</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="car foam wash.html">Foam Wash</a>
+    <a href="ceramic-coating.html">Ceramic Coating</a>
+    <a href="interior-deep-clean.html" class="active">Interior Clean</a>
+    <a href="contact page.html">Contact</a>
+  </nav>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <img src="interior deep cleaning.jpg" alt="Interior Deep Cleaning" class="hero-img">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Interior Deep Cleaning</h1>
+    <p>Restore freshness, hygiene & comfort inside your car.</p>
+  </div>
+</section>
+
+<!-- ===== Features ===== -->
+<section class="features">
+  <h2>Why Choose Interior Deep Clean?</h2>
+
+  <div class="feature-cards">
+    <div class="feature-card">
+      <img src="vacuum-icon.png" alt="">
+      <h3>Deep Vacuuming</h3><br>
+      <p>Removes dust, food particles & debris from seats, carpets & mats.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="seat-icon.png" alt="">
+      <h3>Seat & Upholstery Care</h3><br>
+      <p>Fabric & leather seats cleaned with safe solutions.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="sanitize-icon.png" alt="">
+      <h3>Odor & Germ Remove</h3><br>
+      <p>Eliminates bad smell, bacteria & allergens for a fresh cabin.</p>
+    </div>
+  </div> <br>
+
+  <div style="display: flex; justify-content: center;">
+  <div class="feature-card" style="text-align: center;">
+    
+    <img src="sanitize-icon.png" alt="">
+    <h3>Steam Wash</h3><br>
+
+    <p>
+      Gentle on Paint: Steam lifts dirt without scratching, unlike brushes, preserving your car's finish.<br><br>
+      Deep Cleaning: Effectively removes grime from wheels, crevices, and hard-to-reach areas.<br><br>
+      Protects Sealants: Maintains the effectiveness of wax and sealants.
+    </p>
+
+  </div>
+</div>
+
+
+
+
+<a href="interior deep cleaning form.html" class="btn">Book Interior Cleaning</a>
+
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <p>© 2025 BigBrotiv | All Rights Reserved</p>
+</footer>
+
+<script>
+  const cards = document.querySelectorAll(".feature-card");
+
+  function revealCards() {
+    const h = window.innerHeight;
+    cards.forEach(card => {
+      if (card.getBoundingClientRect().top < h - 100) {
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0)";
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealCards);
+  revealCards();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Franchise Form | BigBrotiv</title>
+
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #111, #000);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+/* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #000;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+   .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;   /* removes underline */
+}
+
+.logo span {
+  color: #fc8403;
+}
+
+  .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.navbar a:hover {
+  color: #fc8403; /* Change text color on hover */
+}
+
+/* Optional: underline animation */
+.navbar a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #fc8403;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+    /* ===== FORM CONTAINER ===== */
+    .franchise-form {
+      max-width: 1100px;
+      margin: 100px auto;
+      padding: 60px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(252, 132, 3, 0.3);
+    }
+
+    .franchise-form h2 {
+      text-align: center;
+      font-size: 1.9rem;
+      margin-bottom: 45px;
+      color: #fc8403;
+      text-shadow: 0 0 15px rgba(252,132,3,0.6);
+    }
+
+    /* ===== GRID FORM (2 COLUMNS) ===== */
+    .grid-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px 30px;
+    }
+
+    .grid-form input,
+    .grid-form select {
+      width: 100%;
+      padding: 14px;
+      background: #221f1f;
+      border: none;
+      border-bottom: 2px solid #555;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+
+    .grid-form input::placeholder {
+      color: #aaa;
+    }
+
+    .grid-form input:focus,
+    .grid-form select:focus {
+      border-bottom-color: #fc8403;
+    }
+
+    /* ===== BUTTON ===== */
+    .btn {
+      grid-column: span 2;
+      padding: 14px;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #fc8403, gold);
+      color: #000;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 0.4s;
+      box-shadow: 0 0 15px rgba(255,215,0,0.4);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px gold;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      .grid-form {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        grid-column: span 1;
+      }
+
+      .franchise-form {
+        padding: 40px 20px;
+        margin: 80px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+<header class="navbar">
+  <a href="index .html" class="logo">
+    Big <span>Brotiv</span>
+  </a>
+
+    <a href="index .html">Home</a>
+  </nav>
+</header>
+
+
+<section class="franchise-form">
+  <h2>BOOK A FREE CONSULTATION CALL TO EXPLORE THE OPPORTUNITY</h2>
+
+  <form class="grid-form">
+    <input type="text" placeholder="First Name" required>
+    <input type="text" placeholder="Last Name" required>
+
+    <input type="text" placeholder="Country" required>
+    <input type="text" placeholder="City" required>
+
+    <input type="email" placeholder="Email" required>
+    <input type="tel" placeholder="Phone" required>
+
+    <select required>
+      <option value="">Work Category</option>
+      <option>Business Owner</option>
+      <option>Job / Service</option>
+      <option>Self Employed</option>
+    </select>
+
+    <select required>
+      <option value="">Past Business Experience</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</section>
+
+</body>
+</html>
