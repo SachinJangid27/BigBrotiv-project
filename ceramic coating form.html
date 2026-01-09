@@ -235,58 +235,68 @@
  
     <p>Long-lasting shine & ultimate paint protection ✨</p>
 
-    <form id="ceramicForm">
-      <div class="input-group">
-        <input type="text" required>
-        <label>Full Name</label>
-      </div>
+  <form id="ceramicForm">
+  <div class="input-group">
+    <input type="text" name="name" required>
+    <label>Full Name</label>
+  </div>
 
-      <div class="input-group">
-        <input type="tel" required>
-        <label>Mobile Number</label>
-      </div>
+  <div class="input-group">
+    <input type="tel" name="phone" required>
+    <label>Mobile Number</label>
+  </div>
 
-      <div class="input-group">
-        <input type="text" required>
-        <label>Car Model</label>
-      </div>
+  <div class="input-group">
+    <input type="text" name="car_model" required>
+    <label>Car Model</label>
+  </div>
 
-      <div class="input-group">
-        <select required>
-          <option value="" disabled selected></option>
-          <option>Hatchback</option>
-          <option>Sedan</option>
-          <option>SUV</option>
-          <option>Luxury</option>
-        </select>
-        <label>Car Type</label>
-      </div>
+  <div class="input-group">
+    <select name="car_type" required>
+      <option value="" disabled selected></option>
+      <option>Hatchback</option>
+      <option>Sedan</option>
+      <option>SUV</option>
+      <option>Luxury</option>
+    </select>
+    <label>Car Type</label>
+  </div>
 
-      <!-- <div class="input-group">
-        <select required>
-          <option value="" disabled selected></option>
-          <option>1 Year Coating</option>
-          <option>3 Year Coating</option>
-          <option>5 Year Coating</option>
-        </select>
-        <label>Coating Package</label>
-      </div> -->
+  <div class="input-group">
+    <input type="date" name="date" required>
+    <label>Preferred Date</label>
+  </div>
 
-      <div class="input-group">
-        <input type="date" required>
-        <label>Preferred Date</label>
-      </div>
+  <button type="submit" class="book-btn">Book Ceramic Coating</button>
+</form>
 
-      <button type="submit" class="book-btn">Book Ceramic Coating</button>
-    </form>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+
   </div>
 </section>
 
 <script>
-  document.getElementById("ceramicForm").addEventListener("submit", function(e) {
+  (function () {
+    emailjs.init("gDD1oWtMhyfqIXB4K"); // 🔑 replace
+  })();
+
+  document.getElementById("ceramicForm").addEventListener("submit", function (e) {
     e.preventDefault();
-    alert("✅ Ceramic Coating booking received! Our team will contact you shortly.");
-    this.reset();
+
+    emailjs.sendForm(
+      "service_2do5bv9",   // 🔁 replace
+      "template_bw3iryg",  // 🔁 replace
+      this
+    )
+    .then(function () {
+      alert("✅ Ceramic Coating booking received! Our team will contact you shortly.");
+      document.getElementById("ceramicForm").reset();
+    })
+    .catch(function (error) {
+      alert("❌ Failed to send booking. Please try again.");
+      console.log("EmailJS Error:", error);
+    });
   });
 </script>
 
