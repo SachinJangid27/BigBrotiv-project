@@ -126,22 +126,22 @@ body {
 <form id="mainForm">
 
   <div class="input-group">
-    <input type="text" required>
+    <input type="text" id="fullname" name="fullname" required>
     <label>Full Name</label>
   </div>
 
   <div class="input-group">
-    <input type="tel" pattern="[0-9]{10}" required>
+    <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
     <label>Mobile Number</label>
   </div>
 
   <div class="input-group">
-    <input type="text" required>
+    <input type="text" id="carmodel" name="carmodel" required>
     <label>Car Model</label>
   </div>
 
   <div class="input-group">
-    <select required>
+    <select id="cartype" name="cartype" required>
       <option value="" disabled selected></option>
       <option>Hatchback</option>
       <option>Sedan</option>
@@ -151,33 +151,34 @@ body {
     <label>Car Type</label>
   </div>
 
-  <!-- SERVICE TYPE -->
   <div class="input-group">
-    <select id="service" required onchange="updatePackages()">
+    <select id="service" name="service" required onchange="updatePackages()">
       <option value="" disabled selected></option>
-      <option value="foam">Foam Wash</option>
-      <option value="ceramic">Ceramic Coating</option>
-      <option value="interior">Interior Cleaning</option>
-      <option value="ppf">PPF</option>
+      <option value="Foam Wash">Foam Wash</option>
+      <option value="Ceramic Coating">Ceramic Coating</option>
+      <option value="Interior Cleaning">Interior Cleaning</option>
+      <option value="PPF">PPF</option>
     </select>
     <label>Service Type</label>
   </div>
 
-  <!-- PACKAGE -->
   <div class="input-group">
-    <select id="package" required>
+    <select id="package" name="package" required>
       <option value="" disabled selected></option>
     </select>
     <label>Service Package</label>
   </div>
 
   <div class="input-group">
-    <input type="date" required>
+    <input type="date" id="date" name="date" required>
     <label>Preferred Date</label>
   </div>
 
-  <button type="submit" class="book-btn">Book Now</button>
+  <button type="submit" class="book-btn" id="submitBtn">
+    Book Now
+  </button>
 </form>
+
 
 </div>
 </section>
@@ -189,34 +190,60 @@ function updatePackages() {
 
   pkg.innerHTML = '<option value="" disabled selected></option>';
 
-  let options = [];
+  const packages = {
+    "Foam Wash": ["Basic Foam Wash", "Premium Foam Wash"],
+    "Ceramic Coating": ["1 Year Coating", "3 Year Coating", "5 Year Coating"],
+    "Interior Cleaning": ["Standard Cleaning", "Deep Cleaning", "Premium Interior"],
+    "PPF": ["Full Car PPF", "Partial PPF", "Door & Bumper PPF"]
+  };
 
-  if(service === "foam") {
-    options = ["Basic Foam Wash", "Premium Foam Wash"];
-  }
-  if(service === "ceramic") {
-    options = ["1 Year Coating", "3 Year Coating", "5 Year Coating"];
-  }
-  if(service === "interior") {
-    options = ["Standard Cleaning", "Deep Cleaning", "Premium Interior"];
-  }
-  if(service === "ppf") {
-    options = ["Full Car PPF", "Partial PPF", "Door & Bumper PPF"];
-  }
-
-  options.forEach(opt => {
+  packages[service]?.forEach(p => {
     const o = document.createElement("option");
-    o.textContent = opt;
+    o.textContent = p;
     pkg.appendChild(o);
   });
 }
 
-document.getElementById("mainForm").addEventListener("submit", function(e){
+const form = document.getElementById("mainForm");
+const submitBtn = document.getElementById("submitBtn");
+
+form.addEventListener("submit", function(e){
   e.preventDefault();
-  alert("✅ Booking received! Our team will contact you shortly.");
-  this.reset();
+
+  submitBtn.innerText = "Booking...";
+  submitBtn.disabled = true;
+
+  emailjs.sendForm(
+    "service_2do5bv9",
+    "template_bw3iryg",
+    this
+  )
+  .then(() => {
+    alert("✅ Booking received! Our team will contact you shortly.");
+    form.reset();
+    submitBtn.innerText = "Book Now";
+    submitBtn.disabled = false;
+  })
+  .catch(error => {
+    alert("❌ Failed to send booking. Try again.");
+    console.error(error);
+    submitBtn.innerText = "Book Now";
+    submitBtn.disabled = false;
+  });
 });
 </script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function(){
+    emailjs.init("gDD1oWtMhyfqIXB4K"); // 🔴 replace
+  })();
+</script>
+
 
 </body>
 </html>
