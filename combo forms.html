@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Service | Big Brotiv</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #111, #000);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #000;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo span { color: #fc8403; }
+
+.booking-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px 40px;
+}
+
+.booking-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 0 40px rgba(252,132,3,0.3);
+}
+
+.booking-card h2 {
+  text-align: center;
+  color: #fc8403;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px 10px;
+  background: #221f1f;
+  border: none;
+  border-bottom: 2px solid #555;
+  color: #fff;
+}
+
+.input-group label {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  color: #aaa;
+  transition: 0.3s;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group select:focus + label,
+.input-group select:valid + label {
+  top: -10px;
+  font-size: 12px;
+  color: #fc8403;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg,#fc8403,gold);
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px gold;
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <a href="index .html" class="logo">Big <span>Brotiv</span></a>
+</header>
+
+<section class="booking-section">
+<div class="booking-card">
+<h2>Book Car Service</h2>
+
+<form id="mainForm">
+
+  <div class="input-group">
+    <input type="text" required>
+    <label>Full Name</label>
+  </div>
+
+  <div class="input-group">
+    <input type="tel" pattern="[0-9]{10}" required>
+    <label>Mobile Number</label>
+  </div>
+
+  <div class="input-group">
+    <input type="text" required>
+    <label>Car Model</label>
+  </div>
+
+  <div class="input-group">
+    <select required>
+      <option value="" disabled selected></option>
+      <option>Hatchback</option>
+      <option>Sedan</option>
+      <option>SUV</option>
+      <option>Luxury</option>
+    </select>
+    <label>Car Type</label>
+  </div>
+
+  <!-- SERVICE TYPE -->
+  <div class="input-group">
+    <select id="service" required onchange="updatePackages()">
+      <option value="" disabled selected></option>
+      <option value="foam">Foam Wash</option>
+      <option value="ceramic">Ceramic Coating</option>
+      <option value="interior">Interior Cleaning</option>
+      <option value="ppf">PPF</option>
+    </select>
+    <label>Service Type</label>
+  </div>
+
+  <!-- PACKAGE -->
+  <div class="input-group">
+    <select id="package" required>
+      <option value="" disabled selected></option>
+    </select>
+    <label>Service Package</label>
+  </div>
+
+  <div class="input-group">
+    <input type="date" required>
+    <label>Preferred Date</label>
+  </div>
+
+  <button type="submit" class="book-btn">Book Now</button>
+</form>
+
+</div>
+</section>
+
+<script>
+function updatePackages() {
+  const service = document.getElementById("service").value;
+  const pkg = document.getElementById("package");
+
+  pkg.innerHTML = '<option value="" disabled selected></option>';
+
+  let options = [];
+
+  if(service === "foam") {
+    options = ["Basic Foam Wash", "Premium Foam Wash"];
+  }
+  if(service === "ceramic") {
+    options = ["1 Year Coating", "3 Year Coating", "5 Year Coating"];
+  }
+  if(service === "interior") {
+    options = ["Standard Cleaning", "Deep Cleaning", "Premium Interior"];
+  }
+  if(service === "ppf") {
+    options = ["Full Car PPF", "Partial PPF", "Door & Bumper PPF"];
+  }
+
+  options.forEach(opt => {
+    const o = document.createElement("option");
+    o.textContent = opt;
+    pkg.appendChild(o);
+  });
+}
+
+document.getElementById("mainForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("✅ Booking received! Our team will contact you shortly.");
+  this.reset();
+});
+</script>
+
+</body>
+</html>
