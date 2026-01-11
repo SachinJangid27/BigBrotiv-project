@@ -182,32 +182,85 @@
 <section class="franchise-form">
   <h2>BOOK A FREE CONSULTATION CALL TO EXPLORE THE OPPORTUNITY</h2>
 
-  <form class="grid-form">
-    <input type="text" placeholder="First Name" required>
-    <input type="text" placeholder="Last Name" required>
+ <form class="grid-form" id="franchiseForm">
 
-    <input type="text" placeholder="Country" required>
-    <input type="text" placeholder="City" required>
+    <input type="text" name="first_name" placeholder="First Name" required>
+<input type="text" name="last_name" placeholder="Last Name" required>
 
-    <input type="email" placeholder="Email" required>
-    <input type="tel" placeholder="Phone" required>
+<input type="text" name="country" placeholder="Country" required>
+<input type="text" name="city" placeholder="City" required>
 
-    <select required>
-      <option value="">Work Category</option>
-      <option>Business Owner</option>
-      <option>Job / Service</option>
-      <option>Self Employed</option>
-    </select>
+<input type="email" name="email" placeholder="Email" required>
+<input type="tel" name="phone" placeholder="Phone" required>
 
-    <select required>
-      <option value="">Past Business Experience</option>
-      <option>Yes</option>
-      <option>No</option>
-    </select>
+<select name="work_category" required>
+  <option value="">Work Category</option>
+  <option>Business Owner</option>
+  <option>Job / Service</option>
+  <option>Self Employed</option>
+</select>
 
-    <button type="submit" class="btn">Submit</button>
+<select name="experience" required>
+  <option value="">Past Business Experience</option>
+  <option>Yes</option>
+  <option>No</option>
+</select>
+
+<button type="submit" class="btn" id="submitBtn">Submit</button>
+
   </form>
 </section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function () {
+    emailjs.init("gDD1oWtMhyfqIXB4K"); // 🔴 Replace
+  })();
+</script>
+
+
+<script>
+const form = document.getElementById("franchiseForm");
+const submitBtn = document.getElementById("submitBtn");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  submitBtn.innerText = "Submitting...";
+  submitBtn.disabled = true;
+
+  // 1️⃣ Send email to ADMIN
+  emailjs.sendForm(
+    "service_2do5bv9",
+    "template_e4oy35p",
+    this
+  )
+  // 2️⃣ Send confirmation email to CUSTOMER
+  // .then(() => {
+  //   return emailjs.sendForm(
+  //     "YOUR_SERVICE_ID",
+  //     "TEMPLATE_CUSTOMER",
+  //     this
+  //   );
+  // })
+  .then(() => {
+    alert("✅ Thank you! Our team will contact you shortly.");
+    form.reset();
+    submitBtn.innerText = "Submit";
+    submitBtn.disabled = false;
+  })
+  .catch(error => {
+    alert("❌ Submission failed. Please try again.");
+    console.error(error);
+    submitBtn.innerText = "Submit";
+    submitBtn.disabled = false;
+  });
+});
+</script>
+
+
 
 </body>
 </html>
