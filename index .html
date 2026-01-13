@@ -36,17 +36,65 @@
     <a href="#" onclick="scrollToSection('services')">Home</a>
 
     <!-- SERVICES WITH POPUP -->
-    <div class="service-wrapper">
-      <a href="#services" onclick="scrollToSection('services')">Services</a>
+    <!-- <div class="service-wrapper">
+      <a href="#services" onclick="scrollToSection('services')">Services</a> -->
 
       <!-- POPUP -->
-      <div class="service-popup">
+      <!-- <div class="service-popup">
         <p>Premium Foam Wash</p>
         <p>Ceramic Coating</p>
         <p>PPF Protection</p>
         <p>Interior Deep Clean</p>
       </div>
-    </div>
+    </div> -->
+
+
+    <div class="service-wrapper">
+  <a href="#services" onclick="scrollToSection('services')" id="serviceLink">Services</a>
+
+  <!-- POPUP -->
+<div class="service-popup" id="servicePopup">
+  <a href="car foam wash.html"> ➤Premium Car Foam Wash</a><br><br>
+  <a href="ceramic-coating.html">➤Ceramic Coating</a><br><br>
+  <a href="ppf page.html">➤PPF Protection</a><br><br>
+  <a href="interior deep clean.html">➤Interior Deep Clean</a>
+</div>
+
+</div>
+
+<script>
+const link = document.getElementById('serviceLink');
+const popup = document.getElementById('servicePopup');
+
+let timeout;
+
+// Show popup when hovering link
+link.addEventListener('mouseenter', () => {
+  popup.classList.add('show');
+  clearTimeout(timeout);
+});
+
+// Hide popup only if cursor leaves both link and popup
+link.addEventListener('mouseleave', () => {
+  timeout = setTimeout(() => {
+    if (!popup.matches(':hover')) {
+      popup.classList.remove('show');
+    }
+  }, 200); // slight delay to avoid flicker
+});
+
+// Keep popup visible when hovering popup
+popup.addEventListener('mouseenter', () => {
+  clearTimeout(timeout);
+  popup.classList.add('show');
+});
+
+// Hide popup when leaving popup
+popup.addEventListener('mouseleave', () => {
+  popup.classList.remove('show');
+});
+</script>
+
 
     <a href="franchise.html">Franchise</a>
     <a href="contact page.html">Contact</a>

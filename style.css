@@ -390,33 +390,46 @@ body {
   display: inline-block;
 }
 
+/* Link styling */
+.service-wrapper a {
+  text-decoration: none;
+  color: #fc8403;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Popup styling */
 .service-popup {
   position: absolute;
-  top: 35px;
+  top: 35px; /* below the link */
   left: 50%;
   transform: translateX(-50%);
   background: #111;
   padding: 15px 20px;
   border-radius: 10px;
   box-shadow: 0 0 25px #fc8403;
-  display: none;
+  color: #fff;
   white-space: nowrap;
   z-index: 2000;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.service-popup.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 .service-popup p {
   margin: 8px 0;
-  color: #fff;
   font-size: 0.95rem;
+  cursor: pointer;
 }
 
 .service-popup p:hover {
   color: #fc8403;
-}
-
-/* SHOW POPUP ON HOVER */
-.service-wrapper:hover .service-popup {
-  display: block;
 }
 
 
