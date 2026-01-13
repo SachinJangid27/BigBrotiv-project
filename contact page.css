@@ -44,14 +44,15 @@ body {
   z-index: 100;
 }
 
-  .logo {
-  font-size: 1.8rem;
+.logo {
+  font-size: 1.6rem;
   font-weight: bold;
-  color: white;
+  color: #fff;
+  text-decoration: none;   /* removes underline */
 }
 
 .logo span {
-  color: #fc8403; /* Orange */
+  color: #fc8403;
 }
 
 nav a {
@@ -147,7 +148,7 @@ nav a.active {
 .socials {
   margin-top: 25px;
 }
-
+/* 
 .social {
   display: inline-block;
   margin: 0 10px;
@@ -165,7 +166,31 @@ nav a.active {
   color: black;
   transform: scale(1.1);
   box-shadow: 0 0 20px #fc8403;
+} */
+
+.social {
+  font-size: 28px;
+  text-decoration: none;
 }
+
+/* Instagram original gradient */
+.social.ig i {
+  background: radial-gradient(circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hover effect */
+.social.ig:hover i {
+  transform: scale(1.15);
+  transition: 0.3s ease;
+}
+
 
 /* ===== Form ===== */
 .contact-form input,
