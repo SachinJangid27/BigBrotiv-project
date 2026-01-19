@@ -39,6 +39,20 @@ body {
 
 .logo span { color: #fc8403; }
 
+
+    .navbar nav a {
+      color: #fff;
+      margin-left: 25px;
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .navbar nav a:hover,
+    .navbar nav a.active {
+      color: #fc8403;
+      transform: scale(1.1);
+    }
+
 .booking-section {
   min-height: 100vh;
   display: flex;
@@ -117,7 +131,13 @@ body {
 
 <header class="navbar">
   <a href="index .html" class="logo">Big <span>Brotiv</span></a>
+
+    <nav>
+      <a href="index .html">Home</a>
+    </nav>
 </header>
+
+
 
 <section class="booking-section">
 <div class="booking-card">
