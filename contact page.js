@@ -1,14 +1,32 @@
-// Smooth scroll (optional if you link to sections)
-function scrollToSection(id) {
-  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const submitBtn = document.getElementById("submitBtn");
 
-// Contact form handler
-const contactForm = document.getElementById("contactForm");
-if (contactForm) {
-  contactForm.addEventListener("submit", function (e) {
+  if (!form || !submitBtn) return;
+
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    alert("Thank you for contacting BigBrotiv! We'll get back to you soon 🚗✨");
-    this.reset();
+
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    emailjs
+      .sendForm(
+        "service_esoqpw8",   // ✅ Your Service ID
+        "template_ib65qzc",  // ✅ Your Template ID
+        form
+      )
+      .then(() => {
+        alert("✅ Message sent successfully!");
+        form.reset();
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        alert("❌ Message failed. Please try again later.");
+      })
+      .finally(() => {
+        submitBtn.textContent = "Send Message";
+        submitBtn.disabled = false;
+      });
   });
-}
+});

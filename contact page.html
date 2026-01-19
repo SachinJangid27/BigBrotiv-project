@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | BigBrotiv Car Wash</title>
   <link rel="stylesheet" href="contact page.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
+
   <!-- ===== Background Video ===== -->
   <video autoplay muted loop playsinline class="background-video">
     <source src="bg video.mp4" type="video/mp4" />
@@ -18,9 +18,7 @@
 
   <!-- ===== Navbar ===== -->
   <header class="navbar">
-  <a href="index .html" class="logo">
-    Big <span>Brotiv</span>
-  </a>
+    <a href="index .html" class="logo">Big <span>Brotiv</span></a>
     <nav>
       <a href="index .html">Home</a>
       <a href="contact.html" class="active">Contact</a>
@@ -29,32 +27,24 @@
 
   <!-- ===== Hero Section ===== -->
   <section class="contact-hero">
-    <h1 class="fade-in">Get In Touch With <span>BigBrotiv</span></h1>
-    <p class="fade-in-delay">We’d love to hear from you — let’s make your car shine!</p>
+    <h1>Get In Touch With <span>BigBrotiv</span></h1>
+    <p>We’d love to hear from you — let’s make your car shine!</p>
   </section>
 
   <!-- ===== Contact Section ===== -->
   <section class="contact-section">
     <div class="contact-container">
+
       <!-- Left Info -->
       <div class="contact-info">
         <h2>Contact Information</h2>
         <p><strong>📍 Address:</strong> Near MRF Tyre, Opp. Anis Hall, Yavatmal Road, Wani 445304</p>
         <p><strong>📧 Email:</strong> bigbrotivcare@gmail.com</p>
         <p><strong>📞 Phone:</strong> +91 98765 43210</p>
-
         <div class="socials">
-          <!-- <a href="#" class="social fb">Facebook</a> -->
-          <!-- <a href="https://www.instagram.com/bigbrotivofficial?igsh=ZG45anp4NWxzZjZx" class="social ig">Instagram</a> -->
-          <!-- <a href="#" class="social wa">WhatsApp</a> -->
-
-          <a href="https://www.instagram.com/bigbrotivofficial?igsh=ZG45anp4NWxzZjZx"
-   class="social ig"
-   target="_blank"
-   aria-label="Instagram">
-  <i class="fa-brands fa-square-instagram"></i>
-</a>
-
+          <a href="https://www.instagram.com/bigbrotivofficial" class="social ig" target="_blank">
+            <i class="fa-brands fa-square-instagram"></i>
+          </a>
         </div>
       </div>
 
@@ -62,12 +52,19 @@
       <div class="contact-form">
         <h2>Send Us a Message</h2>
         <form id="contactForm">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" rows="5" required></textarea>
-          <button type="submit" class="btn">Send Message</button>
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+          <!-- Hidden fields for EmailJS template -->
+          <!-- <input type="hidden" name="form_type" value="Contact Form">
+          <input type="hidden" name="receiver_name" value="Big Brotiv Team">
+          <input type="hidden" name="message_line" value="You have received a new message from the website."> -->
+
+          <button type="submit" class="btn" id="submitBtn">Send Message</button>
         </form>
       </div>
+
     </div>
   </section>
 
@@ -76,6 +73,13 @@
     <p>© 2025 BigBrotiv | All Rights Reserved</p>
   </footer>
 
-  <script src="contact page.js"></script>
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("D6GsLhB4yX7eNi5eu"); // Public Key
+</script>
+
+<script src="contact page.js"></script>
+
 </body>
 </html>
