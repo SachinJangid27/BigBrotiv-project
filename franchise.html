@@ -75,9 +75,9 @@
     }
 
     /* ===== Hero ===== */
-    .hero {
+    /* .hero {
       position: relative;
-      height: 80vh;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -94,7 +94,38 @@
       top: 0;
       left: 0;
       z-index: -1;
-    }
+    } */
+
+    .hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* HERO IMAGE */
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* THIS MAKES IMAGE FIT */
+  filter: brightness(0.45);
+  z-index: -1;
+}
+
+/* CONTENT ABOVE IMAGE */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
 
     .hero-overlay {
       position: absolute;
@@ -222,17 +253,17 @@
 </div>
   <nav>
     <a href="index .html">Home</a>
-    <a href="car foam wash.html">Foam Wash</a>
+    <!-- <a href="car foam wash.html">Foam Wash</a>
     <a href="ceramic-coating.html">Ceramic Coating</a>
     <a href="ppf.html">PPF</a>
-    <a href="franchise.html" class="active">Franchise</a>
+    <a href="franchise.html" class="active">Franchise</a> -->
     <a href="contact page.html">Contact</a>
   </nav>
 </header>
 
 <!-- ===== Hero ===== -->
 <section class="hero">
-  <img src="franchise image.jpg" alt="BigBrotiv Franchise" class="hero-img">
+  <img src="FRANCHIES IMG.png" alt="BigBrotiv Franchise" class="hero-img">
   <div class="hero-overlay"></div>
   <div class="hero-content">
  <h1 class="brand-title">

@@ -13,18 +13,39 @@ body {
 }
 
 /* ===== Navbar ===== */
-.navbar {
+  /* .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter:none;
+  } */
+
+  .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
-  background: #000;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  backdrop-filter:none;
+
+  background: transparent;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
+
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.9); /* Visible on scroll */
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
 
 .logo {
   font-size: 1.8rem;
