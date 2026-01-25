@@ -9,70 +9,93 @@
 <body>
 
 
-  <!-- new nav bar -->
 
+<!-- ================= NAVBAR ================= -->
 <header class="navbar">
   <div class="logo">
     Big <span>Brotiv</span>
   </div>
 
-  <nav>
+  <!-- Hamburger icon (mobile) -->
+  <div class="menu-toggle" id="menuToggle">☰</div>
+
+  <nav id="navMenu">
     <a href="#" onclick="scrollToSection('services')">Home</a>
 
- 
-
+    <!-- Services -->
     <div class="service-wrapper">
-  <a href="#services" onclick="scrollToSection('services')" id="serviceLink">Services</a>
+      <a href="#services" id="serviceLink">Services</a>
 
-  <!-- POPUP -->
-<div class="service-popup" id="servicePopup">
-  <a href="car foam wash.html"> ➤Premium Car Foam Wash</a><br><br>
-  <a href="ceramic-coating.html">➤Ceramic Coating</a><br><br>
-  <a href="ppf page.html">➤PPF Protection</a><br><br>
-  <a href="interior deep clean.html">➤Interior Deep Clean</a>
-</div>
-
-</div>
-
-<script>
-const link = document.getElementById('serviceLink');
-const popup = document.getElementById('servicePopup');
-
-let timeout;
-
-// Show popup when hovering link
-link.addEventListener('mouseenter', () => {
-  popup.classList.add('show');
-  clearTimeout(timeout);
-});
-
-// Hide popup only if cursor leaves both link and popup
-link.addEventListener('mouseleave', () => {
-  timeout = setTimeout(() => {
-    if (!popup.matches(':hover')) {
-      popup.classList.remove('show');
-    }
-  }, 200); // slight delay to avoid flicker
-});
-
-// Keep popup visible when hovering popup
-popup.addEventListener('mouseenter', () => {
-  clearTimeout(timeout);
-  popup.classList.add('show');
-});
-
-// Hide popup when leaving popup
-popup.addEventListener('mouseleave', () => {
-  popup.classList.remove('show');
-});
-</script>
-
+      <!-- Desktop popup -->
+      <div class="service-popup" id="servicePopup">
+        <a href="car foam wash.html">➤ Premium Car Foam Wash</a><br>
+        <a href="ceramic-coating.html">➤ Ceramic Coating</a><br>
+        <a href="ppf page.html">➤ PPF Protection</a><br>
+        <a href="interior deep clean.html">➤ Interior Deep Clean</a>
+      </div>
+    </div>
 
     <a href="franchise.html">Franchise</a>
     <a href="contact page.html">Contact</a>
     <a href="combo forms.html">Book Service</a>
   </nav>
 </header>
+
+<!-- ================= NAVBAR JS ================= -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Smooth scroll
+  window.scrollToSection = function (id) {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // Navbar background on scroll
+  window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+  });
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+
+  // Desktop Services hover
+  const link = document.getElementById("serviceLink");
+  const popup = document.getElementById("servicePopup");
+  let timeout;
+
+  link.addEventListener("mouseenter", () => {
+    popup.classList.add("show");
+    clearTimeout(timeout);
+  });
+
+  link.addEventListener("mouseleave", () => {
+    timeout = setTimeout(() => {
+      if (!popup.matches(":hover")) {
+        popup.classList.remove("show");
+      }
+    }, 200);
+  });
+
+  popup.addEventListener("mouseenter", () => {
+    clearTimeout(timeout);
+    popup.classList.add("show");
+  });
+
+  popup.addEventListener("mouseleave", () => {
+    popup.classList.remove("show");
+  });
+
+});
+</script>
 
 
 

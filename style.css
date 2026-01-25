@@ -25,50 +25,127 @@ body {
     z-index: 1000;
     backdrop-filter:none;
   } */
-
-  .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 60px;
+/* ================= NAVBAR BASE ================= */
+.navbar {
   position: fixed;
   top: 0;
   width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   z-index: 1000;
-
   background: transparent;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.9); /* Visible on scroll */
-  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
-
+/* ================= LOGO ================= */
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: white;
+  color: #fff;
 }
 
 .logo span {
-  color: #fc8403; /* Orange */
+  color: #fc8403;
 }
 
-
+/* ================= NAV LINKS ================= */
+.navbar nav {
+  display: flex;
+  align-items: center;
+}
 
 .navbar nav a {
   color: #fff;
   margin-left: 25px;
   text-decoration: none;
-  transition: color 0.3s, transform 0.3s;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar nav a:hover {
-  color:#fc8403;
+  color: #fc8403;
   transform: scale(1.1);
+}
+
+/* ================= SERVICES POPUP ================= */
+.service-wrapper {
+  position: relative;
+}
+
+.service-popup {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: #111;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: none;
+  min-width: 220px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.service-popup a {
+  display: block;
+  margin: 2px 0;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.service-popup.show {
+  display: block;
+}
+
+/* ================= HAMBURGER ================= */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ================= MOBILE VIEW ================= */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.95);
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .navbar nav.active {
+    display: flex;
+  }
+
+  .navbar nav a {
+    margin: 15px 0;
+    font-size: 1.2rem;
+  }
+
+  /* Disable popup on mobile */
+  .service-popup {
+    display: none !important;
+  }
 }
 
 /* ===== Hero Section ===== */

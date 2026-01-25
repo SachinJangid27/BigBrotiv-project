@@ -25,6 +25,9 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+
+  
+
   window.scrollToSection = function (id) {
     const section = document.getElementById(id);
     if (section) {
@@ -40,3 +43,5 @@ document.addEventListener("DOMContentLoaded", () => {
     navbar.classList.toggle("scrolled", window.scrollY > 50);
   });
 </script>
+
+
