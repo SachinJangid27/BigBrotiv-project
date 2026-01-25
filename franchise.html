@@ -240,6 +240,55 @@
       color: #aaa;
       margin-top: 50px;
     }
+
+
+/* ===== Mobile Navbar Fix ===== */
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 15px 20px; /* reduce padding */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+.navbar nav {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    #fc8403,
+    #000
+  );
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  padding: 20px 0;
+}
+
+  .navbar nav a {
+    margin: 15px 0;
+    font-size: 1.2rem;
+  }
+
+  .navbar nav.active {
+    display: flex;
+  }
+}
+
   </style>
 </head>
 
@@ -250,13 +299,12 @@
   <a href="index .html" class="logo">
     Big <span>Brotiv</span>
   </a>
-</div>
-  <nav>
+
+  <!-- Hamburger (mobile) -->
+  <div class="menu-toggle" id="menuToggle">☰</div>
+
+  <nav id="navMenu">
     <a href="index .html">Home</a>
-    <!-- <a href="car foam wash.html">Foam Wash</a>
-    <a href="ceramic-coating.html">Ceramic Coating</a>
-    <a href="ppf.html">PPF</a>
-    <a href="franchise.html" class="active">Franchise</a> -->
     <a href="contact page.html">Contact</a>
   </nav>
 </header>
@@ -326,6 +374,16 @@
 
   window.addEventListener("scroll", revealCards);
   revealCards();
+</script>
+
+
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
 </script>
 
 </body>

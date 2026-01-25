@@ -150,6 +150,46 @@ body {
   transform: scale(1.05);
   box-shadow: 0 0 25px gold;
 }
+
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar nav {
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    background: rgba(0,0,0,0.95);
+    padding: 12px 18px;
+    border-radius: 12px;
+    display: none;
+  }
+
+  .navbar nav.active {
+    display: block;
+  }
+
+  .navbar nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
 </style>
 </head>
 
@@ -164,9 +204,11 @@ body {
 <header class="navbar">
   <a href="index .html" class="logo">Big <span>Brotiv</span></a>
 
-    <nav>
-      <a href="index .html">Home</a>
-    </nav>
+  <div class="menu-toggle" id="menuToggle">☰</div>
+
+  <nav id="navMenu">
+    <a href="index .html">Home</a>
+  </nav>
 </header>
 
 
@@ -296,6 +338,16 @@ form.addEventListener("submit", function(e){
   })();
 </script>
 
+
+
+<script>
+  const toggle = document.getElementById("menuToggle");
+  const nav = document.getElementById("navMenu");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+</script>
 
 </body>
 </html>
