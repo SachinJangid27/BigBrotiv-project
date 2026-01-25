@@ -59,6 +59,33 @@
       transform: scale(1.1);
     }
 
+/* Hamburger menu button - hidden on desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fc8403;
+  border-radius: 2px;
+}
+
+/* Show hamburger on mobile */
+@media screen and (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+}
+
     /* ===== Hero ===== */
     .hero {
       position: relative;
@@ -214,6 +241,45 @@
       color: #aaa;
       margin-top: 50px;
     }
+
+
+
+
+    @media screen and (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+    flex-wrap: wrap;
+  }
+
+  .navbar nav {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    #fc8403,
+    #000
+  );
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  padding: 20px 0;
+}
+
+  .navbar nav a {
+    margin-left: 0;
+  }
+
+  .navbar nav.active {
+    display: flex;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+}
   </style>
 </head>
 
@@ -227,7 +293,11 @@
 
   <!-- <button class="nav-btn">Apply Now</button> -->
 
-
+<button class="nav-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
 
   <nav>
     <a href="index .html">Home</a>
@@ -296,6 +366,17 @@
   window.addEventListener("scroll", revealCards);
   revealCards();
 </script>
+
+
+<script>
+const navToggle = document.querySelector(".nav-toggle");
+const nav = document.querySelector(".navbar nav");
+
+navToggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+</script>
+
 
 </body>
 </html>
