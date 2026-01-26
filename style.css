@@ -306,49 +306,77 @@ body {
   border-radius: 18px;
   overflow: hidden;
   position: relative;
-
-  /* Entrance animation */
   animation: fadeUp 1.2s ease forwards;
 }
 
-/* Gradient overlay graphic */
+/* Gradient overlay */
 .footer-image-container::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0,0,0,0.7),
-    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.3),
     rgba(0,0,0,0)
   );
-  z-index: 1;
+  z-index: 3;
+  pointer-events: none;
 }
 
-/* Image styling */
-.footer-image-container img {
+/* ✅ VIDEO — MOBILE PERFECT */
+.footer-image-container video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 1;
+}
 
-  animation: slowZoom 10s ease-in-out infinite;
-  transition: transform 0.8s ease, filter 0.6s ease;
+/* 📱 MOBILE FIX — make video behave like image */
+@media (max-width: 768px) {
+  .footer-image-container {
+    height: 240px;
+    background: #000; /* fills empty space */
+  }
 
+  .footer-image-container video {
+    object-fit: contain;   /* 🔥 THIS is the key */
+    transform: none;
+    animation: none;
+  }
+}
+
+  /* Smooth luxury feel */
+  animation: slowZoom 12s ease-in-out infinite;
   filter: brightness(0.95) contrast(1.05);
 }
 
-/* Hover luxury effect */
-.footer-image-container:hover img {
-  transform: scale(1.08);
-  filter: brightness(1.1);
+/* Hover effect (desktop only) */
+@media (hover: hover) {
+  .footer-image-container:hover video {
+    transform: translate(-50%, -50%) scale(1.08);
+    filter: brightness(1.1);
+  }
+
+  .footer-image-container:hover {
+    box-shadow: 0 0 40px rgba(252, 132, 3, 0.6);
+  }
 }
 
-/* Optional glowing border */
-.footer-image-container:hover {
-  box-shadow: 0 0 40px rgba(252, 132, 3, 0.6);
+/* 📱 Mobile responsive */
+@media (max-width: 768px) {
+  .footer-image-container {
+    height: 240px;
+  }
+
+  .footer-image-container video {
+    animation: none; /* smoother on mobile */
+  }
 }
 
-/* ===== ANIMATIONS ===== */
+/* ===== Animations ===== */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -361,40 +389,9 @@ body {
 }
 
 @keyframes slowZoom {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-/* ===== MOBILE RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .footer-image-container {
-    height: 240px;
-  }
-}
-
-
-/* ✨ Hover Effect ✨ */
-.footer-image-container img:hover {
-  transform: scale(1.1);
-  box-shadow:
-    0 0 20px #fc8403,
-    0 0 50px #fc8403;
-  filter: brightness(1.25) saturate(1.4);
-}
-
-
-
-/* 🌟 Fade-in Animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.05); }
+  100% { transform: translate(-50%, -50%) scale(1); }
 }
 
 /* ===== Footer ===== */

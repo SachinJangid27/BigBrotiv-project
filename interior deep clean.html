@@ -213,6 +213,67 @@
       color: #aaa;
       margin-top: 50px;
     }
+
+/* Hamburger button */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  height: 3px;
+  width: 100%;
+  background: #fc8403;
+  border-radius: 2px;
+}
+
+/* Mobile navbar fix */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 14px 18px;
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+.navbar nav {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    #fc8403,
+    #000
+  );
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  padding: 20px 0;
+}
+
+  .navbar nav.active {
+    display: flex;
+  }
+
+  .navbar nav a {
+    margin-left: 0;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+}
+
   </style>
 </head>
 
@@ -220,17 +281,23 @@
 
 <!-- ===== Navbar ===== -->
 <header class="navbar">
-  <a href="index .html" class="logo">
-    Big <span>Brotiv</span>
-  </a>
-</div>
-  <nav>
-    <a href="index .html">Home</a>
-    <!-- <a href="car foam wash.html">Foam Wash</a>
-    <a href="ceramic-coating.html">Ceramic Coating</a>
-    <a href="interior-deep-clean.html" class="active">Interior Clean</a> -->
-    <a href="contact page.html">Contact</a>
-  </nav>
+<a href="index .html" class="logo">
+Big <span>Brotiv</span>
+</a>
+
+
+<!-- Hamburger menu -->
+<button class="nav-toggle">
+<span></span>
+<span></span>
+<span></span>
+</button>
+
+
+<nav>
+<a href="index .html">Home</a>
+<a href="contact page.html">Contact</a>
+</nav>
 </header>
 
 <!-- ===== Hero ===== -->
@@ -309,6 +376,16 @@
 
   window.addEventListener("scroll", revealCards);
   revealCards();
+</script>
+
+
+<script>
+const navToggle = document.querySelector(".nav-toggle");
+const nav = document.querySelector(".navbar nav");
+
+navToggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
 </script>
 
 </body>
