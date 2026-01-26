@@ -163,6 +163,64 @@
         margin: 80px 15px;
       }
     }
+
+
+/* ===== HAMBURGER ===== */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  height: 3px;
+  width: 100%;
+  background: #fc8403;
+  border-radius: 2px;
+}
+
+/* ===== MOBILE NAVBAR ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+.navbar nav {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    #fc8403,
+    #000
+  );
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  padding: 20px 0;
+}
+
+  .navbar nav.active {
+    display: flex;
+  }
+
+  .navbar nav a {
+    margin-left: 0;
+  }
+}
+
   </style>
 </head>
 
@@ -174,6 +232,14 @@
     Big <span>Brotiv</span>
   </a>
 
+  <!-- Hamburger -->
+  <button class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav>
     <a href="index .html">Home</a>
   </nav>
 </header>
@@ -260,6 +326,15 @@ form.addEventListener("submit", function(e) {
 });
 </script>
 
+
+<script>
+const navToggle = document.querySelector(".nav-toggle");
+const nav = document.querySelector(".navbar nav");
+
+navToggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+</script>
 
 
 </body>
