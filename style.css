@@ -380,7 +380,7 @@ body {
   /* Smooth luxury feel */
   animation: slowZoom 12s ease-in-out infinite;
   filter: brightness(0.95) contrast(1.05);
-}
+
 
 /* Hover effect (desktop only) */
 @media (hover: hover) {
@@ -393,6 +393,8 @@ body {
     box-shadow: 0 0 40px rgba(252, 132, 3, 0.6);
   }
 }
+
+
 
 /* 📱 Mobile responsive */
 @media (max-width: 768px) {
