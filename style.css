@@ -32,6 +32,9 @@ body {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
+
+
+
 /* ================= LOGO ================= */
 .logo {
   font-size: 1.8rem;
@@ -79,6 +82,14 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
+/* Desktop hover behavior */
+@media (hover: hover) {
+  .service-wrapper:hover .service-popup {
+    display: block;
+  }
+}
+
+
 .service-popup a {
   display: block;
   margin: 2px 0;
@@ -89,6 +100,7 @@ body {
 .service-popup.show {
   display: block;
 }
+
 
 /* ================= HAMBURGER ================= */
 .menu-toggle {
