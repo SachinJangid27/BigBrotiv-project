@@ -328,7 +328,7 @@ nav a.active {
     display: block;
   }
 
-  .navbar nav {
+  /* .navbar nav {
     position: absolute;
     top: 64px;
     left: 0;
@@ -343,6 +343,42 @@ nav a.active {
     gap: 18px;
     padding: 20px 0;
     display: none;
+  } */
+
+
+
+.navbar nav {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+
+  /* Glassmorphism background */
+  background: rgba(31, 31, 31, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  
+
+
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  padding: 20px 0;
+
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+
+ .navbar nav a {
+    margin: 15px 0;
+    font-size: 1.2rem;
   }
 
   .navbar nav.show {
