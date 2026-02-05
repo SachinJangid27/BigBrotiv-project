@@ -147,31 +147,7 @@ nav a.active {
 /* ===== Socials ===== */
 .socials {
   margin-top: 25px;
-}
-/* 
-.social {
-  display: inline-block;
-  margin: 0 10px;
-  padding: 10px 16px;
-  border-radius: 30px;
-  border: 1px solid #fc8403;
-  color: #fc8403;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s;
-}
-
-.social:hover {
-  background: #fc8403;
-  color: black;
-  transform: scale(1.1);
-  box-shadow: 0 0 20px #fc8403;
-} */
-
-.social {
-  font-size: 40px;
-  text-decoration: none;
-}
+} 
 
 /* Instagram original gradient */
 .social.ig i {

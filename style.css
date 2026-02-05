@@ -321,7 +321,7 @@ body {
   background: #fc8403;
 }
 
-/* ===== Footer Image ===== */
+
 /* ===== FOOTER IMAGE WITH GRAPHICS & ANIMATION ===== */
 
 .footer-image-container {
@@ -374,14 +374,16 @@ body {
 }
 
   /* Smooth luxury feel */
+  .your-element {
   animation: slowZoom 12s ease-in-out infinite;
   filter: brightness(0.95) contrast(1.05);
+}
 
 
 /* Hover effect (desktop only) */
 @media (hover: hover) {
   .footer-image-container:hover video {
-    transform: translate(-50%, -50%) scale(1.08);
+    /* transform: translate(-50%, -50%) scale(1.08); */
     filter: brightness(1.1);
   }
 
@@ -465,10 +467,6 @@ body {
   font-size: 0.9rem;
   color: #aaa;
 }
-
-
-/* ===== Modal Background ===== */
-.
 
 /* ===== Close Button ===== */
 #close-btn {
