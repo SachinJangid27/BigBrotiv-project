@@ -123,18 +123,33 @@ body {
     display: block;
   }
 
+#menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: transparent;
+  display: none;
+  z-index: 5;
+}
+
+#menuOverlay.active {
+  display: block;
+}
 
 .navbar nav {
   position: absolute;
   top: 70px;
   left: 0;
   width: 100%;
-
+z-index: 10;
   /* Glassmorphism background */
   background: rgba(31, 31, 31, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-
+ max-height: 80vh;
+  overflow-y: auto;
 
   border: 1px solid rgba(255, 255, 255, 0.1);
 
