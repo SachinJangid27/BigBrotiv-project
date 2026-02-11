@@ -116,7 +116,9 @@ body {
   .navbar {
     padding: 15px 20px;
   }
-
+.er{
+  margin-top: 10px;
+}
   .menu-toggle {
     display: block;
   }
@@ -156,9 +158,11 @@ body {
   }
 
   .navbar nav a {
-    margin: 15px 0;
+    margin-bottom: 10px;
+
+    /* margin: 15px 0; */
     font-size: 1.2rem;
-  }
+  } 
 
   /* Disable popup on mobile */
   .service-popup {
