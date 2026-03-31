@@ -243,6 +243,7 @@ body {
       <option value="Ceramic Coating">Ceramic Coating</option>
       <option value="Interior Cleaning">Interior Cleaning</option>
       <option value="PPF">PPF</option>
+       <option value="Sun Control Flim">Sun Control Flim</option>
     </select>
     <label>Service Type</label>
   </div>
@@ -269,7 +270,7 @@ body {
 </section>
 
 <script>
-function updatePackages() {
+  function updatePackages() {
   const service = document.getElementById("service").value;
   const pkg = document.getElementById("package");
 
@@ -279,7 +280,8 @@ function updatePackages() {
     "Foam Wash": ["Basic Foam Wash", "Premium Foam Wash"],
     "Ceramic Coating": ["1 Year Coating", "3 Year Coating", "5 Year Coating"],
     "Interior Cleaning": ["Standard Cleaning", "Deep Cleaning", "Premium Interior"],
-    "PPF": ["Full Car PPF", "Partial PPF", "Door & Bumper PPF"]
+    "PPF": ["Full Car PPF", "Partial PPF", "Door & Bumper PPF"],
+    "Sun Control Flim": ["Basic Film Package","Standard Film Package","Premium Ceramic Package","Full Car Film Package"]
   };
 
   packages[service]?.forEach(p => {
