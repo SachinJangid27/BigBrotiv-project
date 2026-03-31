@@ -82,6 +82,8 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
+
+
 /* Desktop hover behavior */
 @media (hover: hover) {
   .service-wrapper:hover .service-popup {
@@ -100,7 +102,6 @@ body {
 .service-popup.show {
   display: block;
 }
-
 
 /* ================= HAMBURGER ================= */
 .menu-toggle {

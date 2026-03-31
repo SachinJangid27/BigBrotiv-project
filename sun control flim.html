@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sun Control Film | BigBrotiv</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: white;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(0,0,0,0.6);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #fc8403;
+    }
+
+    .navbar nav a {
+      color: #fff;
+      margin-left: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .navbar nav a:hover {
+      color: #fc8403;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      height: 80vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.45);
+      z-index: -1;
+    }
+
+    /* Overlay gradient */
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      color: #fc8403;
+    }
+
+    .hero-content p {
+      margin-top: 15px;
+      font-size: 1.2rem;
+    }
+
+    /* Features */
+    .features {
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 2.5rem;
+      color: #fc8403;
+      margin-bottom: 50px;
+    }
+
+    .feature-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: rgba(252, 132, 3, 0.12);
+      padding: 30px;
+      border-radius: 15px;
+      width: 280px;
+      transition: 0.4s;
+    }
+
+    .feature-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #fc8403;
+    }
+
+    .feature-card img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    /* Button */
+    .btn {
+      display: inline-block;
+      padding: 12px 35px;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #fc8403, gold);
+      color: #000;
+      font-weight: 600;
+      margin-top: 40px;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    .footer {
+      background: #111;
+      text-align: center;
+      padding: 40px 20px;
+      color: #aaa;
+      margin-top: 50px;
+    }
+
+    /* Mobile Responsive */
+    @media screen and (max-width: 768px) {
+
+      .navbar {
+        padding: 15px 20px;
+      }
+
+      .hero {
+        height: 60vh;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+
+      .features {
+        padding: 60px 20px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <a href="index.html" class="logo">Big <span>Brotiv</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="contact page.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <!-- IMPORTANT: Rename your image file like this -->
+  <img src="sun control flim.png" class="hero-img">
+
+  <div class="hero-content">
+    <h1>Sun Control Film</h1>
+    <p>Protect your car from heat, UV rays, and glare with premium film.</p>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <h2>Why Choose Sun Control Film?</h2>
+
+  <div class="feature-cards">
+
+    <div class="feature-card">
+      <img src="uv-icon.png">
+      <h3>UV Protection</h3>
+      <p>Blocks harmful UV rays and protects your skin & car interior.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="heat-icon.png">
+      <h3>Heat Reduction</h3>
+      <p>Keeps your car cool by reducing interior temperature.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="privacy-icon.png">
+      <h3>Privacy & Style</h3>
+      <p>Enhances privacy and gives your car a premium look.</p>
+    </div>
+
+  </div>
+
+  <a href="combo forms.html" class="btn">Book Sun Film</a>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>© 2025 BigBrotiv | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
